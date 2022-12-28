@@ -1,0 +1,126 @@
+@charset "utf-8";
+
+html, body {
+    overflow: hidden
+}
+
+.map {
+    position: relative;
+    z-index: 10;
+}
+
+#timetable {
+    position: absolute;
+    z-index: 20;
+    cursor: move;
+    background: #fffde7;
+    padding: 1.5em 1em;
+    transform: rotate(-2deg);
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+    color: #795548;
+    left: -100%;
+}
+
+#timetable::after {
+    content: '';
+    position: absolute;
+    background: rgba(245,245,245,0.7);
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+    transform: rotate(-4deg);
+}
+
+#close {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+}
+
+#destination {
+    text-align: center;
+    text-shadow: 1px 1px 2px silver;
+    background: linear-gradient(transparent 70%, #ffd2fa 50%);
+}
+
+#middle {
+    text-align: center;
+}
+
+#time {
+    text-align: center;
+}
+
+@media screen and (min-width: 481px) {
+    #timetable {
+        top: 640px;
+        width: 360px;
+    }
+
+    #timetable::after {
+        left: 50%;
+        top: -15px;
+        margin-left: -75px;
+        width: 150px;
+        height: 30px;
+    }
+
+    #close {
+        right: 5px;
+        font-size: 20px;
+    }
+
+    #destination {
+        font-size: 25px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    #middle {
+        font-size: 20px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    #time {
+        font-size: 35px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 0;
+        margin-right: 32px;
+    }
+}
+
+@media screen and (max-width: 481px) {
+    #timetable {
+        top: 400px;
+        width: 108px;
+    }
+
+    #timetable::after {
+        left: 40px;
+        top: -10px;
+        width: 60px;
+        height: 20px;
+    }
+
+    #close {
+        right: 2px;
+        font-size: 20px;
+        top: -7px;
+    }
+
+    #destination {
+        font-size: 17px;
+        margin: -5px;
+    }
+
+    #middle {
+        font-size: 14px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    #time {
+        font-size: 19px;
+        margin: -5px;
+    }
+}
